@@ -108,7 +108,7 @@ if st.session_state.logged_in:
 
         produit = col1.text_input("Nom du produit", max_chars=100)
         taille500ml = col2.number_input("Quantité 500ml", min_value=0, step=1, value=0)
-        taille1L = col3.number_input("Quantité 1L", min_value=0, step=1, value=0)
+        taille1L = col3.number_input("Quantité 1L 2L", min_value=0, step=1, value=0)
         taille4L = col4.number_input("Quantité 4L", min_value=0, step=1, value=0)
         taille10L = col5.number_input("Quantité 10L", min_value=0, step=1, value=0)
 
@@ -131,7 +131,7 @@ if st.session_state.logged_in:
             # Champs modifiables dans le tableau
             produit = col1.text_input("Nom du produit", value=product[1], key=f"produit_{product[0]}")
             taille500ml = col2.number_input("Quantité 500ml", min_value=0, step=1, value=product[2], key=f"taille500ml_{product[0]}")
-            taille1L = col3.number_input("Quantité 1L", min_value=0, step=1, value=product[3], key=f"taille1L_{product[0]}")
+            taille1L = col3.number_input("Quantité 1L 2L", min_value=0, step=1, value=product[3], key=f"taille1L_{product[0]}")
             taille4L = col4.number_input("Quantité 4L", min_value=0, step=1, value=product[4], key=f"taille4L_{product[0]}")
             taille10L = col5.number_input("Quantité 10L", min_value=0, step=1, value=product[5], key=f"taille10L_{product[0]}")
 
