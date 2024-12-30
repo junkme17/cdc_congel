@@ -70,15 +70,23 @@ init_db()
 def show_login_screen():
     """Fonction pour afficher le splash screen avec mot de passe."""
     st.title("Page de Connexion")
-    password = st.text_input("Mot de passe", type="password")
 
+    # Boîte de message pour le mot de passe
+    password_input = st.empty()  # Espace vide pour afficher le champ de mot de passe
+
+    # Champ de mot de passe
+    password = password_input.text_input("Entrez le mot de passe", type="password")
+
+    # Vérification du mot de passe
     if password == "cdc987654":  # Remplacer "votre_mot_de_passe" par le mot de passe réel
+        password_input.empty()  # Masquer le champ de mot de passe après succès
         st.session_state.logged_in = True
-        st.session_state.login_successful = True
+        st.session_state.password_input = ""  # Effacer le mot de passe dans la session
         st.success("Connexion réussie!")
         return True
     elif password:
-        st.error("Mot de passe incorrect. Veuillez réessayer.")
+        password_input.text_input("Mot de passe incorrect. Essayez à nouveau.", type="password", key="incorrect_password")
+        
     return False
 
 # Vérification si l'utilisateur est connecté
