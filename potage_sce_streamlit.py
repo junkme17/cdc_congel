@@ -1,102 +1,10 @@
 import streamlit as st  # ok
 import sqlite3
 
-st.set_page_config(layout="centered")
+st.set_page_config(layout="wide")
 
 # Connexion à la base de données SQLite
 DB_PATH = "produits.db"
-"""
-st.markdown("""
-    <style>
-        /* Configuration du conteneur personnalisé */
-        .custom-container {
-            width: 50%;
-            max-width: 1800px;
-            margin: 0 auto;
-            padding: 0 1rem;
-        }
-        
-        /* Suppression du padding par défaut de Streamlit */
-        [data-testid="stVerticalBlock"] {
-            padding-left: 0rem;
-            padding-right: 0rem;
-        }
-
-        /* Personnalisation des boutons */
-        .stButton > button {
-            background-color: #E01E1E;
-            color: white;
-            border: none;
-            padding: 1px 3px;
-            font-size: 12px;
-            border-radius: 2px;
-            cursor: pointer;
-            transition: background-color 0.3s;
-            min-width: 80px;
-            margin-top: 25px;  /* Ajout de marge en haut pour aligner avec les inputs */
-            height: 31px;      /* Hauteur fixe pour correspondre aux inputs */
-        }
-
-        .stButton > button:hover {
-            background-color: #EFA260;
-        }
-
-        .stButton > button[disabled] {
-            background-color: #c6c6c6;
-            cursor: not-allowed;
-        }
-        
-        /* Ajustement des marges et du padding pour les éléments Streamlit */
-        .block-container {
-            padding: 2rem 0;
-            margin: 0;
-            max-width: 50%;
-        }
-        
-        /* Style des inputs pour plus de cohérence */
-        .stTextInput > div > div > input,
-        .stNumberInput > div > div > input {
-            padding: 0.5rem;
-            font-size: 14px;
-            min-width: 100px;
-            height: 31px;      /* Hauteur fixe pour tous les inputs */
-        }
-        
-        /* Suppression du label pour les boutons pour un meilleur alignement */
-        .stButton > div[data-testid="stMarkdownContainer"] {
-            position: absolute;
-            width: 1px;
-            height: 1px;
-            padding: 0;
-            margin: -1px;
-            overflow: hidden;
-            clip: rect(0, 0, 0, 0);
-            white-space: nowrap;
-            border: 0;
-        }
-
-        /* Amélioration de l'espacement des colonnes */
-        [data-testid="column"] {
-            padding: 0 0.3rem;
-            min-width: 120px;
-            display: flex;    /* Utilisation de flexbox */
-            align-items: flex-end; /* Alignement en bas */
-            margin-bottom: 1rem; /* Espacement entre les lignes */
-        }
-
-        /* Style spécifique pour la première colonne (nom du produit) */
-        [data-testid="column"]:first-child {
-            min-width: 200px;
-        }
-
-        /* Optimisation de l'affichage des nombres */
-        .stNumberInput > div > div > input {
-            text-align: right;
-            padding-right: 8px;
-        }
-    </style>
-""", unsafe_allow_html=True)
-"""
 
 def init_db():
     """Initialise la base de données et crée la table si elle n'existe pas."""
