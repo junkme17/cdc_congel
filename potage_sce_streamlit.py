@@ -5,7 +5,7 @@ st.set_page_config(layout="centered")
 
 # Connexion à la base de données SQLite
 DB_PATH = "produits.db"
-
+"""
 st.markdown("""
     <style>
         /* Configuration du conteneur personnalisé */
@@ -96,7 +96,7 @@ st.markdown("""
         }
     </style>
 """, unsafe_allow_html=True)
-
+"""
 
 def init_db():
     """Initialise la base de données et crée la table si elle n'existe pas."""
